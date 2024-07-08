@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/02 10:04:57 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/07/04 16:24:45 by lrossi-u         ###   ########.fr       */
+/*   Created: 2024/07/04 12:06:24 by lrossi-u          #+#    #+#             */
+/*   Updated: 2024/07/04 12:09:58 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-char	**ft_split(char const *s, char c)
+
+#include <unistd.h>
+
+void	ft_putchar_fd(char c, int fd)
 {
-	char **res;
-	int i = 0;
-	int j = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-		{
-			//i++;
-			j++;
-		}
-		i++;
-	}
-	return (res);
+	write(fd, &c, 1);
 }
-
-static int	array_len(char const *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i]
-	*/

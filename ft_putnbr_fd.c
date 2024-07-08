@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/02 10:04:57 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/07/04 16:24:45 by lrossi-u         ###   ########.fr       */
+/*   Created: 2024/07/04 12:39:31 by lrossi-u          #+#    #+#             */
+/*   Updated: 2024/07/04 16:29:13 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-char	**ft_split(char const *s, char c)
+
+#include <unistd.h>
+
+void	ft_putnbr_fd(int n, int fd)
 {
-	char **res;
-	int i = 0;
-	int j = 0;
-	while (s[i] != '\0')
+	char	c;
+	char	neg;
+
+	neg = '\n';
+	if (n < 0)
 	{
-		if (s[i] == c)
-		{
-			//i++;
-			j++;
-		}
-		i++;
+		write(fd, &neg, 1);
+		n = -n;
 	}
-	return (res);
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+	{
+		c = n + '0';
+		write(fd, &c, 1);
+	}
 }
-
-static int	array_len(char const *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i]
-	*/

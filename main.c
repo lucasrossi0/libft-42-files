@@ -5,6 +5,7 @@
 
 int	main(void)
 {
+	/*
 	char	*s = "lucasrossiemmamccoy";
 	char test[10] = "lucasrossi";
 	const char *p = "teste";
@@ -91,14 +92,17 @@ int	main(void)
     char *trimmed_str = ft_strtrim(s1teste, setteste);
     printf("Trimmed string: '%s'\n", trimmed_str);
     free(trimmed_str);
-	char const *splitS = "lucas|rossi";
-	char splitD = '|';
-	char **splitR = ft_split(splitS, splitD);
-	int jef = 0;
-	while (splitR[jef] != NULL)
-    {
-        printf("Element %s\n", splitR[jef]);
-        jef++;
-    }
+	//char const *splitS = "lucas|rossi";
+	//char splitD = '|';
+	//char **splitR = ft_split(splitS, splitD);
+	//int jef = 0;
+	//while (splitR[jef] != NULL)
+    //{
+    //    printf("Element %s\n", splitR[jef]);
+    //    jef++;
+    //}
+	*/
+	int itoa = -42;
+	printf("Itoa %s\n", ft_itoa(itoa));
 	return (0);
 }
