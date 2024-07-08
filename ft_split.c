@@ -6,7 +6,7 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:04:57 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/07/04 16:24:45 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/07/08 17:15:40 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -34,3 +34,24 @@ static int	array_len(char const *s, char c)
 	i = 0;
 	while (s[i]
 	*/
+
+static int	ammount_str(char const *s, char c)
+{
+	int	i;
+	int	counter;
+
+	i = 0;
+	counter = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			i++;
+			counter++;
+		}
+		i++;
+	}
+	return (counter);
+}
+
+
