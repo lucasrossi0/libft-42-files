@@ -104,5 +104,15 @@ int	main(void)
 	*/
 	int itoa = -42;
 	printf("Itoa %s\n", ft_itoa(itoa));
+	const char *s = "lucas rossi";
+	char c = ' ';
+	char **split = ft_split(s, c);
+	int i = 0;
+	printf("%s\n", split[i]);
+	while (split[i] != (void *) 0)
+	{
+		printf("%s\n", split[i]);
+		i++;
+	}
 	return (0);
 }
