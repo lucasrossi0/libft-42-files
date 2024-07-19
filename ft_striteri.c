@@ -6,7 +6,11 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 09:52:41 by lrossi-u          #+#    #+#             */
+<<<<<<< HEAD
+/*   Updated: 2024/07/19 18:40:47 by lrossi-u         ###   ########.fr       */
+=======
 /*   Updated: 2024/07/04 16:26:37 by lrossi-u         ###   ########.fr       */
+>>>>>>> 025f9a3ba3ab4d8117c0b09c5054e1a4780a6237
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +19,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		(*f)(i, &s[i]);
 		i++;

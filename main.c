@@ -1,11 +1,15 @@
 #include "libft.h"
 #include <stdio.h>
-#include <bsd/string.h>
+//#include <bsd/string.h>
 #include <stdlib.h>
 
 int	main(void)
 {
+<<<<<<< HEAD
+/*
+=======
 	/*
+>>>>>>> 025f9a3ba3ab4d8117c0b09c5054e1a4780a6237
 	char	*s = "lucasrossiemmamccoy";
 	char test[10] = "lucasrossi";
 	const char *p = "teste";
@@ -92,6 +96,19 @@ int	main(void)
     char *trimmed_str = ft_strtrim(s1teste, setteste);
     printf("Trimmed string: '%s'\n", trimmed_str);
     free(trimmed_str);
+<<<<<<< HEAD
+	*/
+	char const *splitS = "lucas|rossi";
+	char splitD = '|';
+	char **splitR = ft_split(splitS, splitD);
+	int jef = 0;
+	while (splitR[jef])
+    {
+        printf("Element %s\n", splitR[jef]);
+        jef++;
+    }
+	free(splitR);
+=======
 	//char const *splitS = "lucas|rossi";
 	//char splitD = '|';
 	//char **splitR = ft_split(splitS, splitD);
@@ -114,5 +131,6 @@ int	main(void)
 		printf("%s\n", split[i]);
 		i++;
 	}
+>>>>>>> 025f9a3ba3ab4d8117c0b09c5054e1a4780a6237
 	return (0);
 }
