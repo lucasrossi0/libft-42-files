@@ -3,11 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
+/*   By: lrossi-u <lrossi-u@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/02 10:04:57 by lrossi-u          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/07/19 19:01:57 by lrossi-u         ###   ########.fr       */
+/*   Created: 2024/07/22 12:33:09 by lrossi-u          #+#    #+#             */
+/*   Updated: 2024/07/22 17:55:13 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +14,12 @@
 #include <stdio.h>
 
 static int string_length(const char *s, char c)
-=======
-/*   Updated: 2024/07/09 17:05:25 by lrossi-u         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-/*
-char	**ft_split(char const *s, char c)
->>>>>>> 025f9a3ba3ab4d8117c0b09c5054e1a4780a6237
 {
 	int	count;
-	int i;
 
-	i = 0;
 	count = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] != c)
+	while (s[count] && s[count] != c)
 			count++;
-		i++;
-	}
 	return (count);
 }
 
@@ -44,24 +30,13 @@ static int word_count(const char *s, char c)
 
 	i = 0;
 	count = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
-		if (s[i] == c)
-			return (count);
+		if (s[i] != c)
+			count++;
 		i++;
-		count++;
 	}
 	return (count);
-}
-
-static void fill_char(char *split, const char *s, int count, int i)
-{
-	while (i < count)
-	{
-		split[i] = s[i];
-		i++;
-	}
-	split[i] = '\0';
 }
 
 static void free_all(char **split)
@@ -69,7 +44,6 @@ static void free_all(char **split)
 	int i;
 
 	i = 0;
-<<<<<<< HEAD
 	while (split[i])
 	{
 		free(split[i]);
@@ -78,41 +52,102 @@ static void free_all(char **split)
 	free(split);
 	return;
 }
+/*
+static void fill_char(char **split, const char *s, int j, int i, int words)
+{
+	int start;
+
+	start = 0;
+	while (start < words)
+	{
+		split[j][start] = s[i];
+		start++;
+		i++;
+	}
+	split[j][start] = '\0';
+	j++;
+}
+*/
+static char	*create_word(const char *s, char c)
+{
+	char	*word;
+	int		len;
+	int		i;
+
+	i = 0;
+	len = string_length(s, c);
+	word = (char *) malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	while (i < len)
+	{
+		word[i] = s[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+static void	allocate_word(const char *s, char c, char **split, int words)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s[i] && j < words)
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i])
+		{
+			split[j] = create_word(s + i, c);
+			if (!split[j])
+				free_all(split);
+			while (s[i] && s[i] != c)
+				i++;
+			j++;
+		}
+	}
+	split[j] = NULL;
+}
 
 char	**ft_split(char const *s, char c)
 {
 	char **split;
-	int length;
-	int i;
-	int j;
-	int words;
+	int	length;
 
-	length = string_length(s, c);
-	split = (char **) malloc(sizeof(char) * (length + 1));
+	length = word_count(s, c);
+	split = (char **) malloc(sizeof(char *) * (length + 1));
 	if (!split)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (i < length)
-	{
-		words = word_count(s + i, c);
-		split[j] = (char *) malloc(sizeof(char) * (words + 1));
-		if (!split[j])
-			free_all(split);
-		fill_char(split[j], s, words, i);
-		j++;
-		i++;
-	}
-	split[i] = '\0';
+	allocate_word(s, c, split, length);
 	return (split);
 }
 
-=======
-	while (s[i]
-*/
+int main(void)
+{
+	const char *s = "lucas$rossi";
+	char c = '$';
+	char **split = ft_split(s, c);
+	if (!split)
+	{
+		printf("Memory allocation failed\n");
+		return 1;
+	}
+	int i = 0;
+	while (split[i])
+	{
+		printf("String %s\n", split[i]);
+		free(split[i]);
+		i++;
+	}
+	free(split);
+	return (0);
+}
 
-#include <stdio.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 /*
 static int	ammount_str(char const *s, char c)
 {
@@ -131,7 +166,6 @@ static int	ammount_str(char const *s, char c)
 	}
 	return (counter);
 }
-*/
 
 static int	count_words(const char *s, char c)
 {
@@ -195,7 +229,7 @@ char **ft_split(const char *s, char c)
 	create_arr(s, split, c);
 	return (split);
 }
-/*
+
 char **ft_split(const char *s, char c)
 {
 	char **split = 0;
@@ -226,4 +260,3 @@ char **ft_split(const char *s, char c)
 	return (split);
 }
 */
->>>>>>> 025f9a3ba3ab4d8117c0b09c5054e1a4780a6237
