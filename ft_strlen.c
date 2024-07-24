@@ -6,19 +6,18 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:57:24 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/06/17 16:04:35 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/07/24 11:32:05 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *s)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (*s)
-	{
-		s++;
+	while (s[i])
 		i++;
-	}
 	return (i);
 }

@@ -6,23 +6,21 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 16:50:39 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/07/02 09:57:01 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/07/24 09:45:11 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-
-	i = 0;
+	if (!s)
+		return (0);
 	while (*s)
 	{
 		if (*s == (char) c)
-			return ((char *) &s[i]);
-		i++;
+			return ((char *)s);
 		s++;
 	}
-	if (*s == (char) c)
-		return ((char *) &s[i]);
+	if (c == '\0')
+		return ((char *) s);
 	return (0);
 }

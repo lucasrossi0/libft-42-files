@@ -6,7 +6,7 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:00:35 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/07/04 16:19:57 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/07/24 11:37:55 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-int		ft_strlen(char *s);
+size_t	ft_strlen(const char *s);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	*ft_memchr(const void *s, int c, size_t n);

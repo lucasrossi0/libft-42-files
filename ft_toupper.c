@@ -6,17 +6,13 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 16:15:28 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/06/17 17:32:57 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/07/23 18:12:39 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_toupper(int c)
 {
-	if (ft_isalpha(c))
+	if (c >= 'a' && c <= 'z')
 		c -= 32;
-	else
-		return (0);
 	return (c);
 }

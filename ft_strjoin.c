@@ -6,56 +6,32 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 18:17:29 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/06/28 12:44:04 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/07/24 12:05:13 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <stdlib.h>
 #include "libft.h"
 
-/*
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
-	int		len_s1;
-	int		len_s2;
 	int		i;
 	int		j;
 
-	len_s1 = ft_strlen((char *) s1);
-	len_s2 = ft_strlen((char *) s2);
-	res = (char *) malloc(sizeof(char) * (len_s1 + len_s2));
-	if (!res)
-		return (NULL);
+	if (!s1 || !s2)
+		return (0);
 	i = 0;
-	while (i < len_s1)
-	{
-		res[i] = s1[i];
-		i++;
-	}
 	j = 0;
-	while (j < len_s2)
-	{
-		res[i] = s2[j];
-		i++;
-		j++;
-	}
-	res[i] = '\0';
-	return (res);
-}
-*/
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*res;
-	int		len_s1;
-	int		len_s2;
-
-	len_s1 = ft_strlen((char *) s1);
-	len_s2 = ft_strlen((char *) s2);
-	res = (char *) malloc(sizeof(char) * (len_s1 + len_s2));
+	res = (char *) malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!res)
 		return (NULL);
-	ft_memcpy(res, s1, len_s1);
-	ft_memcpy(res + len_s1, s2, len_s2);
+	while (s1[i])
+		res[j++] = s1[i++];
+	i = 0;
+	while (s2[i])
+		res[j++] = s2[i++];
+	res[j] = '\0';
 	return (res);
 }

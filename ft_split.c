@@ -6,12 +6,12 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 12:33:09 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/07/22 17:55:13 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/07/23 18:08:19 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
+//#include <stdio.h>
 
 static int string_length(const char *s, char c)
 {
@@ -124,7 +124,7 @@ char	**ft_split(char const *s, char c)
 	allocate_word(s, c, split, length);
 	return (split);
 }
-
+/*
 int main(void)
 {
 	const char *s = "lucas$rossi";
@@ -145,7 +145,7 @@ int main(void)
 	free(split);
 	return (0);
 }
-
+*/
 //#include <stdio.h>
 //#include <stdlib.h>
 /*

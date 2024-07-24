@@ -6,7 +6,7 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 12:44:44 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/06/24 16:58:17 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/07/23 18:58:07 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	len = ft_strlen((char *) src);
-	if (len == 0)
+	if (size == 0)
 		return (len);
 	i = 0;
 	while (src[i] != '\0' && i < size - 1)

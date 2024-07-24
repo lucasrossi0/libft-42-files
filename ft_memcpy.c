@@ -6,7 +6,7 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 10:57:54 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/06/25 12:08:28 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/07/23 18:21:30 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t len)
 	char		*dst_char;
 	size_t		i;
 
+	if (!dst && !src)
+		return (0);
 	i = 0;
 	dst_char = (char *) dst;
 	src_char = (const char *) src;
