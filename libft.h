@@ -6,7 +6,7 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:00:35 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/07/24 11:37:55 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/07/24 14:21:16 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-size_t  ft_strlcat(char *dst, const char *src, size_t size);
-void    *ft_memcpy(void *dst, const void *src, size_t len);
-int     ft_memcmp(const void *s1, const void *s2, size_t n);
-void    *ft_memmove(void *dest, const void *src, size_t n);
-void    ft_bzero(void *s, size_t n);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+void	*ft_memcpy(void *dst, const void *src, size_t len);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+void	ft_bzero(void *s, size_t n);
 int		ft_atoi(const char *nptr);
 char	*ft_strdup(char *src);
 void	*ft_calloc(size_t nmemb, size_t size);
